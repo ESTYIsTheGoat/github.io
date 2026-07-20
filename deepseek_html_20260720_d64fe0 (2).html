@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PRO COACHING · Fortnite Pro Hub</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: #0a0f18;
+      color: #e8edf5;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .card {
+      max-width: 1200px;
+      width: 100%;
+      background: rgba(13, 21, 32, 0.75);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 3rem;
+      padding: 2.5rem 2.8rem;
+      border: 1px solid rgba(247, 201, 72, 0.2);
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(247, 201, 72, 0.08);
+      transition: all 0.2s;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(247, 201, 72, 0.15);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo i {
+      font-size: 2.8rem;
+      color: #f7c948;
+      filter: drop-shadow(0 0 12px #f7c94844);
+    }
+
+    .logo h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #f7d875, #f0b82b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .logo .sub {
+      font-size: 0.7rem;
+      color: #889bb3;
+      letter-spacing: 1px;
+      font-weight: 400;
+      background: #1a2636;
+      padding: 0.2rem 0.8rem;
+      border-radius: 60px;
+      margin-left: 0.3rem;
+      -webkit-text-fill-color: #889bb3;
+      background: #1a2636;
+    }
+
+    .est-badge {
+      font-size: 0.75rem;
+      color: #6a7f99;
+      background: #1a2636;
+      padding: 0.3rem 1.2rem;
+      border-radius: 60px;
+      border: 1px solid #1a2a3d;
+    }
+
+    .est-badge i {
+      color: #f7c948;
+      margin-right: 0.3rem;
+    }
+
+    /* ===== WELCOME ===== */
+    .welcome {
+      background: #0d1824;
+      border-radius: 1.8rem;
+      padding: 1.8rem 2rem;
+      border: 1px solid #1a2a3d;
+      margin-bottom: 2rem;
+      border-left: 5px solid #f7c948;
+    }
+
+    .welcome p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #d0dce8;
+    }
+
+    .welcome strong {
+      color: #f7c948;
+      font-weight: 700;
+    }
+
+    .welcome .tags {
+      margin-top: 0.8rem;
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .welcome .tags span {
+      background: #1a2636;
+      padding: 0.2rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #f7c948;
+      letter-spacing: 0.5px;
+      border: 1px solid #f7c94822;
+    }
+
+    /* ===== THE ISSUE WITH OTHER COACHES ===== */
+    .issue-section {
+      background: #0d1824;
+      border-radius: 1.8rem;
+      padding: 1.8rem 2rem;
+      border: 1px solid #1a2a3d;
+      margin-bottom: 2rem;
+      border-left: 5px solid #ff6b6b;
+    }
+
+    .issue-section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ff6b6b;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .issue-section h2 i {
+      font-size: 1.4rem;
+    }
+
+    .issue-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .issue-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .issue-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .issue-grid .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      background: #15202e;
+      padding: 0.8rem 1.2rem;
+      border-radius: 1.2rem;
+      border: 1px solid #1a2a3d;
+    }
+
+    .issue-grid .item i {
+      color: #ff6b6b;
+      font-size: 1.2rem;
+      margin-top: 0.1rem;
+    }
+
+    .issue-grid .item .text {
+      font-size: 0.9rem;
+      color: #c8d6e5;
+      line-height: 1.5;
+    }
+
+    .issue-grid .item .text strong {
+      color: #ff6b6b;
+    }
+
+    /* ===== HOW YOUR COACHING IS COMPLETELY DIFFERENT ===== */
+    .difference-section {
+      background: #1a2636;
+      border-radius: 1.8rem;
+      padding: 1.8rem 2rem;
+      border: 1px solid #4cd96444;
+      margin-bottom: 2rem;
+      border-right: 5px solid #4cd964;
+    }
+
+    .difference-section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #4cd964;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .difference-section h2 i {
+      font-size: 1.4rem;
+    }
+
+    .difference-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .difference-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .difference-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .difference-grid .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      background: #0d1824;
+      padding: 0.8rem 1.2rem;
+      border-radius: 1.2rem;
+      border: 1px solid #4cd96422;
+    }
+
+    .difference-grid .item i {
+      color: #4cd964;
+      font-size: 1.2rem;
+      margin-top: 0.1rem;
+    }
+
+    .difference-grid .item .text {
+      font-size: 0.9rem;
+      color: #c8d6e5;
+      line-height: 1.5;
+    }
+
+    .difference-grid .item .text strong {
+      color: #4cd964;
+    }
+
+    /* ===== DEVELOPMENT PROGRAM (MAIN FOCUS) ===== */
+    .dev-program {
+      background: linear-gradient(145deg, #1a2636, #0d1824);
+      border-radius: 2.5rem;
+      padding: 2.5rem 2.8rem;
+      border: 2px solid #f7c948;
+      margin-bottom: 2rem;
+      text-align: center;
+      box-shadow: 0 0 60px #f7c9480a;
+    }
+
+    .dev-program .badge-free {
+      display: inline-block;
+      background: #4cd964;
+      color: #0a0f18;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 0.3rem 1.8rem;
+      border-radius: 60px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .dev-program h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #f7c948;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+
+    .dev-program h2 i {
+      font-size: 2rem;
+    }
+
+    .dev-program .subtitle {
+      font-size: 1.1rem;
+      color: #ff6b6b;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .dev-program .description {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #d0dce8;
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .dev-program .description strong {
+      color: #f7c948;
+    }
+
+    /* Requirements */
+    .dev-program .requirements {
+      background: #0d1824;
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      margin: 1.5rem 0;
+      border: 1px solid #ff6b6b44;
+      border-left: 5px solid #ff6b6b;
+      text-align: left;
+    }
+
+    .dev-program .requirements h3 {
+      color: #ff6b6b;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .dev-program .requirements ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .dev-program .requirements ul li {
+      padding: 0.4rem 0 0.4rem 1.8rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: #c8d6e5;
+      border-bottom: 1px solid #1a2636;
+    }
+
+    .dev-program .requirements ul li:last-child {
+      border-bottom: none;
+    }
+
+    .dev-program .requirements ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #ff6b6b;
+      font-weight: 700;
+    }
+
+    .dev-program .requirements .note {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: #ff6b6b;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* What You Get */
+    .dev-program .what-you-get {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    @media (max-width: 800px) {
+      .dev-program .what-you-get {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .dev-program .what-you-get {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dev-program .what-you-get .item {
+      background: #0d1824;
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid #f7c94822;
+      text-align: center;
+    }
+
+    .dev-program .what-you-get .item i {
+      color: #f7c948;
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .dev-program .what-you-get .item .label {
+      font-weight: 700;
+      color: #f0f4fa;
+      font-size: 0.9rem;
+    }
+
+    .dev-program .what-you-get .item .desc {
+      font-size: 0.8rem;
+      color: #889bb3;
+      margin-top: 0.2rem;
+    }
+
+    /* Program Rules */
+    .dev-program .program-rules {
+      background: #0d1824;
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      margin: 1.5rem 0;
+      border: 1px solid #f7c94844;
+      text-align: left;
+    }
+
+    .dev-program .program-rules h3 {
+      color: #f7c948;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .dev-program .program-rules .rule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .dev-program .program-rules .rule-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dev-program .program-rules .rule-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      background: #15202e;
+      padding: 0.6rem 1rem;
+      border-radius: 0.8rem;
+      border-left: 3px solid #f7c948;
+    }
+
+    .dev-program .program-rules .rule-item i {
+      color: #f7c948;
+      font-size: 0.9rem;
+      margin-top: 0.1rem;
+    }
+
+    .dev-program .program-rules .rule-item .text {
+      font-size: 0.85rem;
+      color: #c8d6e5;
+      line-height: 1.4;
+    }
+
+    .dev-program .program-rules .rule-item .text strong {
+      color: #f7c948;
+    }
+
+    .dev-program .program-rules .warning {
+      text-align: center;
+      margin-top: 1rem;
+      color: #ff6b6b;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-top: 1px solid #1a2636;
+      padding-top: 1rem;
+    }
+
+    /* Apply Now */
+    .dev-program .apply-section {
+      background: #1a2636;
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      margin: 1.5rem 0 0 0;
+      border: 1px solid #4cd96444;
+      text-align: center;
+    }
+
+    .dev-program .apply-section h3 {
+      color: #4cd964;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .dev-program .apply-section p {
+      font-size: 0.9rem;
+      color: #c8d6e5;
+      margin-bottom: 0.5rem;
+    }
+
+    .dev-program .apply-section .doc-link {
+      display: inline-block;
+      background: #0d1824;
+      padding: 0.4rem 1.5rem;
+      border-radius: 60px;
+      border: 1px solid #f7c94844;
+      color: #f7c948;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .dev-program .apply-section .doc-link:hover {
+      border-color: #f7c948;
+      box-shadow: 0 0 20px #f7c94811;
+    }
+
+    .dev-program .apply-section .doc-link i {
+      margin-right: 0.4rem;
+    }
+
+    .dev-program .closing {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #f7c948;
+      letter-spacing: 1px;
+    }
+
+    .dev-program .closing span {
+      color: #ff6b6b;
+    }
+
+    /* ===== WHAT SEPARATES US ===== */
+    .separates-section {
+      background: #0d1824;
+      border-radius: 1.8rem;
+      padding: 1.8rem 2rem;
+      border: 1px solid #1a2a3d;
+      margin-bottom: 2rem;
+      border-right: 5px solid #f7c948;
+    }
+
+    .separates-section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f7c948;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .separates-section h2 i {
+      font-size: 1.4rem;
+    }
+
+    .separates-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .separates-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .separates-grid .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      background: #15202e;
+      padding: 0.8rem 1.2rem;
+      border-radius: 1.2rem;
+      border: 1px solid #1a2a3d;
+    }
+
+    .separates-grid .item i {
+      color: #f7c948;
+      font-size: 1.2rem;
+      margin-top: 0.1rem;
+    }
+
+    .separates-grid .item .text {
+      font-size: 0.9rem;
+      color: #c8d6e5;
+      line-height: 1.5;
+    }
+
+    .separates-grid .item .text strong {
+      color: #f7c948;
+    }
+
+    /* ===== INFO GRID ===== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 800px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .info-panel {
+      background: #0d1824;
+      border-radius: 2rem;
+      padding: 1.8rem 2rem;
+      border: 1px solid #1a2a3d;
+      transition: 0.2s;
+    }
+
+    .info-panel:hover {
+      border-color: #f7c94855;
+      box-shadow: 0 0 30px #f7c9480a;
+    }
+
+    .info-panel h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f7c948;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .info-panel h2 i {
+      font-size: 1.4rem;
+    }
+
+    .info-panel p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #c8d6e5;
+      margin-bottom: 0.8rem;
+    }
+
+    .info-panel ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-panel ul li {
+      padding: 0.5rem 0 0.5rem 1.8rem;
+      position: relative;
+      font-size: 0.92rem;
+      color: #d0dce8;
+      border-bottom: 1px solid #1a2636;
+    }
+
+    .info-panel ul li:last-child {
+      border-bottom: none;
+    }
+
+    .info-panel ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #f7c948;
+      font-weight: 700;
+    }
+
+    .highlight {
+      color: #f7c948;
+      font-weight: 600;
+    }
+
+    /* ===== PACKAGES ===== */
+    .packages-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f7c948;
+      margin: 2rem 0 1.2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .packages-title i {
+      font-size: 1.6rem;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .package-card {
+      background: #0d1824;
+      border-radius: 1.8rem;
+      padding: 1.5rem 1.2rem;
+      border: 1px solid #1a2a3d;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .package-card:hover {
+      border-color: #f7c94888;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px #f7c9480d;
+    }
+
+    .package-card .name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #f0f4fa;
+    }
+
+    .package-card .price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #f7c948;
+      margin: 0.4rem 0 0.2rem;
+    }
+
+    .package-card .duration {
+      font-size: 0.8rem;
+      color: #889bb3;
+      margin-bottom: 0.2rem;
+    }
+
+    .package-card .access-badge {
+      display: inline-block;
+      margin-top: 0.6rem;
+      background: #1a2a3d;
+      border: 1px solid #f7c94844;
+      padding: 0.2rem 1rem;
+      border-radius: 60px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #f7c948;
+      letter-spacing: 0.3px;
+    }
+
+    .package-card .access-badge i {
+      margin-right: 4px;
+    }
+
+    /* ===== ACCESS CALLOUT ===== */
+    .access-callout {
+      background: #1a2636;
+      border-left: 5px solid #f7c948;
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.8rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .access-callout i {
+      font-size: 2rem;
+      color: #f7c948;
+    }
+
+    .access-callout span {
+      font-size: 1rem;
+      color: #d0dce8;
+    }
+
+    .access-callout strong {
+      color: #f7c948;
+      font-weight: 700;
+    }
+
+    /* ===== DISCORD JOIN ===== */
+    .join-section {
+      background: #0d1824;
+      border-radius: 2.5rem;
+      padding: 2rem 2.5rem;
+      border: 1px solid #f7c94833;
+      text-align: center;
+      margin-top: 1rem;
+      transition: 0.2s;
+    }
+
+    .join-section:hover {
+      border-color: #f7c94888;
+      box-shadow: 0 0 40px #f7c9480a;
+    }
+
+    .join-section .btn-discord {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: linear-gradient(145deg, #f7c948, #dba22b);
+      border: none;
+      padding: 1rem 3rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #0a0f18;
+      box-shadow: 0 6px 0 #8f6b1a, 0 10px 30px #f7c94833;
+      transition: all 0.1s ease;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .join-section .btn-discord i {
+      font-size: 1.5rem;
+    }
+
+    .join-section .btn-discord:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #8f6b1a;
+    }
+
+    .join-section .link-display {
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      color: #889bb3;
+      word-break: break-all;
+    }
+
+    .join-section .link-display a {
+      color: #f7c948;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed #f7c94844;
+    }
+
+    .join-section .link-display a:hover {
+      border-bottom: 1px solid #f7c948;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer-note {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #4d6279;
+      border-top: 1px solid #1a2636;
+      padding-top: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-note i {
+      color: #f7c948;
+    }
+
+    @media (max-width: 550px) {
+      .card {
+        padding: 1.5rem;
+      }
+      .logo h1 {
+        font-size: 1.6rem;
+      }
+      .package-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .join-section {
+        padding: 1.5rem;
+      }
+      .join-section .btn-discord {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+      }
+      .dev-program {
+        padding: 1.5rem;
+      }
+      .dev-program h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .package-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <div class="logo">
+      <i class="fas fa-crown"></i>
+      <h1>PRO COACHING</h1>
+      <span class="sub">Fortnite</span>
+    </div>
+    <div class="est-badge">
+      <i class="far fa-calendar-alt"></i> Est. Jul 2026
+    </div>
+  </div>
+
+  <!-- ===== WELCOME ===== -->
+  <div class="welcome">
+    <p>
+      <strong>Welcome to PRO COACHING!</strong> This is a dedicated, competitive hub built for serious grinders who want to fix their playstyle, build their fighting IQ, and stop taking bad 50/50 trades. Led by a returning pro with <strong>20,000+ hours</strong> of experience and proven results. <strong>Open a ticket</strong> to secure your session.
+    </p>
+    <div class="tags">
+      <span>🏆 Fortnite</span>
+      <span>⚔️ Competitive</span>
+      <span>🎯 Professional</span>
+    </div>
+  </div>
+
+  <!-- ===== THE ISSUE WITH OTHER COACHES ===== -->
+  <div class="issue-section">
+    <h2><i class="fas fa-times-circle"></i> The Issue with Other Coaches & YouTube</h2>
+    <div class="issue-grid">
+      <div class="item">
+        <i class="fas fa-lock"></i>
+        <div class="text"><strong>The "Gatekeeping" Trap:</strong> Most YouTube videos and coaches intentionally gatekeep the actual top-tier secrets and advanced macro strategies. They only give out basic mechanical tips or surface-level advice.</div>
+      </div>
+      <div class="item">
+        <i class="fas fa-funnel-dollar"></i>
+        <div class="text"><strong>The Sales Funnel:</strong> Their free content and videos aren't actually meant to make you pro—they are just a funnel designed to bait you into buying overpriced masterclasses, courses, or expensive hourly coaching.</div>
+      </div>
+      <div class="item">
+        <i class="fas fa-dollar-sign"></i>
+        <div class="text"><strong>High Costs for Less Value:</strong> Many coaches charge anywhere from $20 to $40+ per hour just to give generic advice, treating coaching as a pure cash grab rather than focusing on actual player development.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HOW YOUR COACHING IS COMPLETELY DIFFERENT ===== -->
+  <div class="difference-section">
+    <h2><i class="fas fa-check-circle"></i> How PRO COACHING is Completely Different</h2>
+    <div class="difference-grid">
+      <div class="item">
+        <i class="fas fa-infinity"></i>
+        <div class="text"><strong>No Time Limits:</strong> Your coaching isn't restricted by a strict daily or weekly clock. It isn't a "one-hour and done" session; you stay locked in with the player until the job is done and the concepts are fully understood.</div>
+      </div>
+      <div class="item">
+        <i class="fas fa-reply-all"></i>
+        <div class="text"><strong>Never Left on Read:</strong> You provide direct, reliable communication. When your players need help, answers, or strategy guidance, you answer them instead of ignoring them or leaving them hanging.</div>
+      </div>
+      <div class="item">
+        <i class="fas fa-hand-holding-heart"></i>
+        <div class="text"><strong>Reinvesting Everything:</strong> You keep your rates accessible because you care about winning, not milking players for cash. Every dollar made goes straight back into funding the community, custom prize pools, and whatever your clients need to succeed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ===== DEVELOPMENT PROGRAM — MAIN FOCUS ===== -->
+  <!-- ============================================================ -->
+  <div class="dev-program">
+
+    <div class="badge-free">🔥 Completely Free — No Cost. No Catch.</div>
+
+    <h2><i class="fas fa-rocket"></i> ⚔️ DEVELOPMENT PROGRAM</h2>
+
+    <div class="subtitle">
+      This is not for casuals. This is not for "I'll try harder next time."<br />
+      This is for players who are done being average.
+    </div>
+
+    <div class="description">
+      This program is <strong>completely free</strong>. No cost. No catch. <strong>Just results.</strong><br /><br />
+      But understand this — <strong>not everyone gets in.</strong> I'm not here to waste my time on players who aren't serious.<br />
+      If you're not willing to sacrifice, if you're not willing to grind, if you're not willing to be broken down and rebuilt — <strong>this isn't for you.</strong>
+    </div>
+
+    <!-- REQUIREMENTS -->
+    <div class="requirements">
+      <h3><i class="fas fa-exclamation-triangle"></i> 📋 REQUIREMENTS — NO EXCEPTIONS</h3>
+      <ul>
+        <li><strong>NA Central or EU</strong> — Div 1, 2, or 3</li>
+        <li><strong>Other Regions</strong> — Div 1 only</li>
+      </ul>
+      <div class="note">⚠️ If you don't meet these requirements, do not apply. I don't make exceptions.</div>
+    </div>
+
+    <!-- WHAT YOU GET -->
+    <div class="what-you-get">
+      <div class="item">
+        <i class="fas fa-infinity"></i>
+        <div class="label">Unlimited Coaching</div>
+        <div class="desc">As long as you're grinding, I'm coaching</div>
+      </div>
+      <div class="item">
+        <i class="fas fa-video"></i>
+        <div class="label">VOD Reviews</div>
+        <div class="desc">Every single mistake, broken down</div>
+      </div>
+      <div class="item">
+        <i class="fas fa-broadcast-tower"></i>
+        <div class="label">Live Coaching</div>
+        <div class="desc">Real-time feedback during matches</div>
+      </div>
+      <div class="item">
+        <i class="fas fa-dumbbell"></i>
+        <div class="label">Custom Routines</div>
+        <div class="desc">Warm-ups, aim training, mental stack</div>
+      </div>
+      <div class="item">
+        <i class="fas fa-fire"></i>
+        <div class="label">Accountability</div>
+        <div class="desc">I don't let you quit on yourself</div>
+      </div>
+      <div class="item">
+        <i class="fas fa-brain"></i>
+        <div class="label">Mental Mastery</div>
+        <div class="desc">Tilt management, confidence, discipline</div>
+      </div>
+    </div>
+
+    <!-- PROGRAM RULES -->
+    <div class="program-rules">
+      <h3><i class="fas fa-gavel"></i> ⚠️ PROGRAM RULES — BREAK THESE = KICKED</h3>
+      <div class="rule-grid">
+        <div class="rule-item">
+          <i class="
